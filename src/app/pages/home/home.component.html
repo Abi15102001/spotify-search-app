@@ -1,0 +1,44 @@
+<app-top-nav></app-top-nav>
+
+<div class="flex flex-wrap gap-5 z-10 mt-20 ms-5 ">
+    <div
+      *ngFor="let category of categories"
+      class="bg-black bg-opacity-50 w-[14rem] h-64 mb-5 rounded-lg relative hover:bg-opacity-30 hover:cursor-pointer group"
+    ><a routerLink="/catPlay/{{category.id}}">
+      <div class="pt-3">
+        <img
+          [src]="category.icons[0].url"
+          class="w-44 h-44 rounded-full m-auto"
+          alt=""
+        />
+      </div>
+      <div class="pt-1 ms-3">
+        <p class="font-semibold text-white text-lg">{{ category.name }}</p>
+        <!-- <p class="font-semibold text-white">
+          Followers:{{ artist.followers.total }}
+        </p> -->
+      </div>
+     </a>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="hidden group-hover:block">
+    <div
+      class="bg-[#159442] w-12 absolute right-7 top-36 h-12 flex justify-center items-center rounded-full"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+  </div> -->

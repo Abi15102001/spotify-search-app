@@ -1,0 +1,30 @@
+    <Header>
+        <div class="w-[1010px] bg-[#159442] rounded-md bg-gradient-to-l h-56 relative">
+                <div class="pt-2 ms-3 flex gap-8">
+                    <div class=""><img [src]="album.images[1].url" alt="" class="w-52 bg-white p-1 rounded-lg"></div>
+                    <div class="">
+                        <p class="font-medium text-3xl  ">{{album.name}}<p>
+                        <p class="font-medium text-3xl  ">{{album.artists[0].name}}<p>
+                        <p class="font-medium text-xl  ">{{album.label}}<p>
+                        <p class="font-medium text-xl  ">Release date : {{album.release_date}}<p>
+                        <p class="font-medium text-xl  ">Popularity : {{album.popularity}}<p>
+                    </div>
+                </div>
+                <button (click)="back()" class="w-8 h-8 absolute top-5 left-5 bg-black rounded-full"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-white m-auto">
+                    <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clip-rule="evenodd" />
+                  </svg>
+                  
+                  </button>
+        </div>
+    </Header>
+
+    <main class="mt-5 ms-5 flex justify-center items-center">
+        <div class=" flex flex-col gap-3 w-full">
+            <div *ngFor="let track of tracks" class="flex gap-3 bg-black bg-opacity-55 shadow-xl mx-5 rounded-lg hover:bg-opacity-100 ">
+                <div><img [src]="album.images[1].url" class="w-20 h-24" alt=""></div>
+                <div>
+                    <p class="text-lg text-white">{{track.name}}</p>
+                    <audio [src]="track.preview_url" controls></audio></div>
+            </div>
+        </div>
+    </main>
